@@ -8,27 +8,31 @@ import androidx.room.RoomDatabase
 @Database(entities = [Gasolina::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {
 
-    abstract fun gasolinas(): GasolinaDao
+    abstract fun gasolinasDao(): GasolinaDao
 
     companion object {
+
         @Volatile
         private var INSTANCE: AppDatabase? = null
 
-        fun getDatabase(constext: Context): AppDatabase {
-            var temp = INSTANCE
-            if(temp != null){
-                return temp
-            }
+
+        fun getInstance(context: Context): AppDatabase {
             synchronized(this) {
-                val instance = Room.databaseBuilder(
-                    constext.applicationContext,
-                    AppDatabase::class.java,
-                    "app_database"
-                ).build()
-                INSTANCE = instance
-                return  instance
+
+                var instance = INSTANCE
+
+                if (instance == null) {
+                    instance = Room.databaseBuilder(
+                        context.applicationContext,
+                        AppDatabase::class.java,
+                        "gas_database"
+                    ).fallbackToDestructiveMigration()
+                        .build()
+
+                    INSTANCE = instance
+                }
+                return instance
             }
         }
-
     }
 }
