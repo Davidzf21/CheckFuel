@@ -8,7 +8,7 @@ data class Gasolina (
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
     val fecha: String,
-    val litros: Double,
-    val dinero: Double
+    val litros: String,
+    val dinero: String
 )
 

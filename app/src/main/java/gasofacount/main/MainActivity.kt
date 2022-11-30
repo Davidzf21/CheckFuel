@@ -3,13 +3,16 @@ package gasofacount.main
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.ContextMenu
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.AdapterView
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
@@ -18,7 +21,7 @@ import gasofacount.main.backend.Gasolina
 import gasofacount.main.databinding.ActivityMainBinding
 import kotlinx.coroutines.launch
 
-class MainActivity : AppCompatActivity(), GasolinaClickListener {
+class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
@@ -36,10 +39,9 @@ class MainActivity : AppCompatActivity(), GasolinaClickListener {
 
         db.gasolinasDao().getAllLive().observe(this, Observer {
             listaGas = it
-            val mainActivity = this
             binding.recyclerView.apply {
                 layoutManager = GridLayoutManager(applicationContext, 1)
-                adapter = GasolinaAdapter(listaGas, mainActivity)
+                adapter = GasolinaAdapter(listaGas)
             }
         })
 
@@ -72,14 +74,6 @@ class MainActivity : AppCompatActivity(), GasolinaClickListener {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration)
                 || super.onSupportNavigateUp()
-    }
-
-    override fun onClick(gas: Gasolina) {
-        TODO("Not yet implemented")
-    }
-
-    override fun setOnLongClickListener(gas: Gasolina) {
-        Log.v("MANTERNer PULSAD", "HE CONSEGUIDO ENTRAR")
     }
 
 }

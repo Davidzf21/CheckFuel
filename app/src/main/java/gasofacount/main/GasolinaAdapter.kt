@@ -7,8 +7,7 @@ import gasofacount.main.backend.Gasolina
 import gasofacount.main.databinding.CardViewDesignBinding
 
 class GasolinaAdapter(
-    private val books: List<Gasolina>,
-    private val clickListener: GasolinaClickListener
+    private val books: List<Gasolina>
     )
     : RecyclerView.Adapter<GasolinaViewHolder>()
 {
@@ -16,7 +15,7 @@ class GasolinaAdapter(
     {
         val from = LayoutInflater.from(parent.context)
         val binding = CardViewDesignBinding.inflate(from, parent, false)
-        return GasolinaViewHolder(binding, clickListener)
+        return GasolinaViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: GasolinaViewHolder, position: Int)
