@@ -27,6 +27,7 @@ abstract class AppDatabase : RoomDatabase() {
                         AppDatabase::class.java,
                         "gas_database"
                     ).fallbackToDestructiveMigration()
+                        .allowMainThreadQueries()
                         .build()
 
                     INSTANCE = instance

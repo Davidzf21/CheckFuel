@@ -4,39 +4,69 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/grey"
     tools:context=".AddItemActivity">
+
+    <TextView
+        android:layout_width="347dp"
+        android:layout_height="122dp"
+        android:text="Añade un nuevo repostaje, rellenando todos los campos:"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="66dp"
+        tools:ignore="MissingConstraints"></TextView>
 
     <EditText
         android:id="@+id/editTextLitros"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="78dp"
+        android:layout_width="236dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="96dp"
+        android:background="@drawable/rounded_edit_text"
         android:ems="10"
+        android:gravity="center"
         android:hint="Litros"
         android:inputType="numberDecimal"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="30sp"
+        android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextDinero" />
 
     <EditText
         android:id="@+id/editTextDinero"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="164dp"
+        android:layout_width="236dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="204dp"
+        android:background="@drawable/rounded_edit_text"
         android:ems="10"
+        android:gravity="center"
         android:hint="Precio"
         android:inputType="numberDecimal"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="30sp"
+        android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/save_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="111dp"
+        android:layout_width="196dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="76dp"
         android:text="Guardar"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextLitros" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

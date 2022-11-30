@@ -16,35 +16,42 @@
 
         <ImageView
             android:id="@+id/imageview"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="45dp"
+            android:layout_height="60dp"
             app:srcCompat="@drawable/pegatina_icono_gasolina"/>
 
         <TextView
             android:id="@+id/textDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="4dp"
             android:layout_marginLeft="15dp"
             android:text="11/29/22, 12:51 PM"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textColor="@color/black"
+            android:textStyle="italic" />
 
         <TextView
             android:id="@+id/textLitros"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="15dp"
             android:text="42.2 l"
-            android:textSize="20sp"
+            android:textSize="21sp"
+            android:textColor="@color/black"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textPrecio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="50 $"
-            android:textSize="20sp"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="15dp"
+            android:text="50.0 $"
+            android:textSize="21sp"
+            android:textColor="@color/black"
             android:textStyle="bold" />
 
     </LinearLayout>

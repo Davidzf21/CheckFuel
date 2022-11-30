@@ -22,4 +22,8 @@ interface GasolinaDao {
 
     @Delete
     fun delete(gasolina: Gasolina)
+
+    @Query("DELETE FROM gasolina")
+    fun deleteALl()
+
 }

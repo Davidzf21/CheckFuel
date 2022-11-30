@@ -9,12 +9,14 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.AdapterView
 import androidx.lifecycle.Observer
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import gasofacount.main.backend.AppDatabase
 import gasofacount.main.backend.Gasolina
 import gasofacount.main.databinding.ActivityMainBinding
-import kotlinx.coroutines.*
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity(), GasolinaClickListener {
 
@@ -58,7 +60,10 @@ class MainActivity : AppCompatActivity(), GasolinaClickListener {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
-            R.id.action_settings -> true
+            R.id.delete_buttom_menu -> {
+                db.gasolinasDao().deleteALl()
+                return true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }
@@ -72,4 +77,9 @@ class MainActivity : AppCompatActivity(), GasolinaClickListener {
     override fun onClick(gas: Gasolina) {
         TODO("Not yet implemented")
     }
+
+    override fun setOnLongClickListener(gas: Gasolina) {
+        Log.v("MANTERNer PULSAD", "HE CONSEGUIDO ENTRAR")
+    }
+
 }

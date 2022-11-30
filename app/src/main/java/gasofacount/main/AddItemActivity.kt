@@ -1,7 +1,6 @@
 package gasofacount.main
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -11,6 +10,7 @@ import gasofacount.main.backend.Gasolina
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import java.text.DecimalFormat
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.time.format.FormatStyle
@@ -26,18 +26,20 @@ class AddItemActivity : AppCompatActivity() {
         val myTextLitros: EditText = findViewById(R.id.editTextLitros)
         val myTextPrecio: EditText = findViewById(R.id.editTextDinero)
 
+        val df = DecimalFormat("#.0")
+
         myButton.setOnClickListener {
             var litro = myTextLitros.getText().toString()
             if(litro == "") {
                 Toast.makeText(this, "Rellena los campos", Toast.LENGTH_SHORT).show()
             } else {
-                var litroDouble = litro.toDouble()
+                var litroDouble = df.format(litro.toDouble()).toDouble()
 
                 val precio = myTextPrecio.text.toString()
                 if (precio == "") {
                     Toast.makeText(this, "Rellena los campos", Toast.LENGTH_SHORT).show()
                 } else {
-                    var precioDouble = precio.toDouble()
+                    var precioDouble = df.format(precio.toDouble()).toDouble()
 
                     val datetime = LocalDateTime.now()
                         .format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT))
