@@ -18,6 +18,8 @@ Descargar el achivo 'CheckFuel.apk' e instalar en el dispositivo android.
 
 A continuación, se muestran una serie de pantallas de la aplicación, así como una breve explicación de cómo usarlas.
 
+
+
 ![Pantalla principal de la aplicación](assets/images/Screenshot_3.png)
 
 Pantalla principal donde se muestra toda la información general. En la esquina inferior derecha, se encuentra el bóton con el que podemos añadir nuevos repostajes.
