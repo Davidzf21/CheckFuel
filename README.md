@@ -16,7 +16,7 @@ Descargar el achivo 'CheckFuel.apk' e instalar en el dispositivo android.
 
 ## Usage
 
-A continuación, se muestran una serie de pantallas de la aplicación, así como una breve explicación de como usarlas.
+A continuación se muestran una serie de pantallas de la aplicación, así como una breve explicación de como usarlas.
 
 ![Pantalla principal de la aplicación](assets/images/Screenshot_3.png)
 
